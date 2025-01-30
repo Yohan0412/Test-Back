@@ -1,5 +1,3 @@
-// src/app/users/users.controller.ts
-
 import {
   Controller,
   Post,
@@ -19,6 +17,11 @@ export class UsersController {
   @Get(':id')
   get(@Param() params) {
     return this.service.getUser(params.id);
+  }
+
+  @Get()
+  getUsers(@Param() user: User) {
+    return this.service.getUsers();
   }
 
   @Post()
